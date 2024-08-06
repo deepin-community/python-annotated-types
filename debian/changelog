@@ -1,5 +1,18 @@
-template-repository (1.0-1) unstable; urgency=medium
+python-annotated-types (0.7.0-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Edward Betts <edward@4angle.com>  Wed, 22 May 2024 22:23:13 +0200
+
+python-annotated-types (0.6.0-2) unstable; urgency=medium
+
+  * Source-only upload to allow package to migrate to testing.
+  * debian/control: Fix incorrect package name for Vcs-Browser and Vcs-Git.
+
+ -- Edward Betts <edward@4angle.com>  Sat, 23 Mar 2024 08:57:02 +0000
+
+python-annotated-types (0.6.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1050339)
+
+ -- Edward Betts <edward@4angle.com>  Sat, 09 Mar 2024 10:52:08 +0100
