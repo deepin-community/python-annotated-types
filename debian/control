@@ -1,15 +1,44 @@
-Source: template-repository
-Section: unknown
+Source: python-annotated-types
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Edward Betts <edward@4angle.com>
+Section: python
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-python3,
+               pybuild-plugin-pyproject,
+               python3-all,
+               python3-hatchling,
+               python3-pytest <!nocheck>
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+Homepage: https://github.com/annotated-types/annotated-types
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-annotated-types
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-annotated-types.git
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: python3-annotated-types
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Reusable constraint types to use with typing.Annotated
+ Extension to Python's type annotation system, leveraging the capabilities of
+ typing.Annotated to incorporate metadata and constraints directly into type
+ hints. This package facilitates the representation of common constraints such
+ as value bounds (e.g., greater than, less than), length restrictions on
+ collections, and predicates for runtime checks, among others. Designed to
+ enhance the expressiveness and utility of type annotations for both static
+ analysis tools and runtime validation libraries.
+ .
+ Key features:
+   - Scalar Value Constraints: Define bounds on scalar values (e.g., integers,
+     floats) with Gt, Lt, Ge, Le for greater/less than (or equal to)
+     comparisons.
+   - Collection Size Constraints: Specify the expected size of collections
+     using Len, MinLen, and MaxLen, applicable to any type supporting the len()
+     function.
+   - Runtime Checks: Utilize the Predicate marker to denote runtime checks,
+     enabling custom validation logic within type annotations.
+   - Comprehensive Documentation: Annotations can include documentation strings
+     via the Doc marker, improving code readability and support for static
+     analysis tools.
+   - No Runtime Overhead for Checks: While enhancing type annotations with
+     meaningful constraints, the package avoids introducing runtime overhead by
+     not performing automatic validation checks, preserving performance.
