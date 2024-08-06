@@ -1,4 +1,10 @@
 #!/usr/bin/make -f
 
+export PYBUILD_NAME=annotated-types
+
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf annotated_types.egg-info/
